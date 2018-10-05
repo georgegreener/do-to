@@ -1,0 +1,24 @@
+{
+  "name": "do-to",
+  "version": "1.0.0",
+  "description": "Keep track of things with do-to",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgegreener/do-to.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgegreener/do-to/issues"
+  },
+  "homepage": "https://github.com/georgegreener/do-to#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.1"
+  }
+}
