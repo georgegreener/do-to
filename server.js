@@ -1,18 +1,28 @@
 var express = require("express");
+var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+var path = require("path");
 
-var port = process.env.port || 3000;
+var PORT = process.env.PORT || 3000;
 
-express().use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-express().use(bodyParser.json());
+app.use(bodyParser.json());
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/do-to";
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
-express().listen(port, function() {
-    console.log("This is Dr. Frasier Crane... I'm listening...\nPort: " + port);
+
+app.use(express.static("public"));
+
+// app.get("/", function(req, res) {
+//     // res.sendFile(path.join(__dirname, "./public/index.html"));
+//     res.send("to-do");
+// });
+
+app.listen(PORT, function() {
+    console.log("This is Dr. Frasier Crane... I'm listening...\nPort: " + PORT);
   });
